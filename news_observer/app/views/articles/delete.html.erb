@@ -1,0 +1,19 @@
+<% @page_title = "Delete Article" %>
+
+<%= link_to("<< Back to List", {:action => 'index', :category_id => @category.id}, :class => 'back-link') %>
+
+<div class="sections delete">
+  <h2>Delete Article</h2>
+
+  <%= form_for(:article, :url => {:action => 'destroy', :id => @article.id, :category_id => @category.id}) do |f| %>
+
+    <p>Are you sure you want to permanently delete this article?</p>
+
+    <p class="reference-name"><%= @article.name %></p>
+
+    <div class="form-buttons">
+      <%= submit_tag("Delete Article") %>
+    </div>
+
+  <% end %>
+</div>

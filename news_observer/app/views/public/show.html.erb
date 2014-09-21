@@ -1,0 +1,14 @@
+<% @page_title = @category.name %>
+
+<h2><%= @category.name %></h2>
+
+<% @category.articles.visible.sorted.each do |article| %>
+  <div class="article">
+    <% case article.content_type %>
+    <% when 'HTML' %>
+      <%= raw(sanitize(article.content, :tags => ['strong', 'em', 'a'])) %>
+    <% when 'text' %>
+      <p><%= article.content %></p>
+    <% end %>
+  </div>
+<% end %>

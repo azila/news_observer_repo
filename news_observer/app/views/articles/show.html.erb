@@ -1,0 +1,43 @@
+<% @page_title = "Show Article" %>
+
+<%= link_to("<< Back to List", {:action => 'index', :category_id => @category.id}, :class => 'back-link') %>
+
+<div class="articles show">
+  <h2>Show Article</h2>
+
+  <table summary="Article detail view">
+    <tr>
+      <th>Category ID</th>
+      <td><%= @article.category_id %></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <td><%= @article.name %></td>
+    </tr>
+    <tr>
+      <th>Position</th>
+      <td><%= @article.position %></td>
+    </tr>
+    <tr>
+      <th>Visible?</th>
+      <td><%= @article.visible ? 'true' : 'false' %></td>
+    </tr>
+    <tr>
+      <th>Content Type</th>
+      <td><%= @article.content_type %></td>
+    </tr>
+    <tr>
+      <th>Content</th>
+      <td><%= @article.content %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @article.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @article.updated_at %></td>
+    </tr>
+  </table>
+
+</div>

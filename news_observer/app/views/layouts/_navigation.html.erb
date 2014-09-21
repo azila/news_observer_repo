@@ -1,0 +1,13 @@
+<% newspapers ||= [] %>
+<ul>
+<% newspapers.each do |newspaper| %>
+  <li>
+    <%= newspaper.name %>
+    <ul>
+    <% newspaper.categories.visible.sorted.each do |category| %>
+      <li><%= link_to_unless_current(category.name, {:action => 'show', :permalink => category.permalink}) %></li>
+    <% end %>
+    </ul>
+  </li>
+  <% end %>
+</ul>

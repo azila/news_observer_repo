@@ -1,0 +1,17 @@
+<% @page_title = "Update Newspaper" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="newspapers edit">
+  <h2>Update Newspaper</h2>
+
+  <%= form_for(:newspaper, :url => {:action => 'update', :id => @newspaper.id}) do |f| %>
+
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Update Newspaper") %>
+    </div>
+
+  <% end %>
+</div>

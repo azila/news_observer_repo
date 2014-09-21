@@ -1,0 +1,19 @@
+<% @page_title = "Delete Newspaper" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="newspapers delete">
+  <h2>Delete Newspaper</h2>
+
+  <%= form_for(:newspaper, :url => {:action => 'destroy', :id => @newspaper.id}) do |f| %>
+
+    <p>Are you sure you want to permanently delete this newspaper?</p>
+
+    <p class="reference-name"><%= @newspaper.name %></p>
+
+    <div class="form-buttons">
+      <%= submit_tag("Delete Newspaper") %>
+    </div>
+
+  <% end %>
+</div>

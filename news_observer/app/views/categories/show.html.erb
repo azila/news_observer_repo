@@ -1,0 +1,39 @@
+<% @page_title = "Show Category" %>
+
+<%= link_to("<< Back to List", {:action => 'index', :newspaper_id => @newspaper.id}, :class => 'back-link') %>
+
+<div class="categories show">
+  <h2>Show Category</h2>
+
+  <table summary="Category detail view">
+    <tr>
+      <th>Newspaper ID</th>
+      <td><%= @category.newspaper_id %></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <td><%= @category.name %></td>
+    </tr>
+    <tr>
+      <th>Permalink</th>
+      <td><%= @category.permalink %></td>
+    </tr>
+    <tr>
+      <th>Position</th>
+      <td><%= @category.position %></td>
+    </tr>
+    <tr>
+      <th>Visible?</th>
+      <td><%= @category.visible ? 'true' : 'false' %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @category.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @category.updated_at %></td>
+    </tr>
+  </table>
+
+</div>

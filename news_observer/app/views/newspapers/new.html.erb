@@ -1,0 +1,17 @@
+<% @page_title = "New Newspaper" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="newspapers new">
+  <h2>Create Newspaper</h2>
+
+  <%= form_for(:newspaper, :url => {:action => 'create'}) do |f| %>
+
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Create Newspaper") %>
+    </div>
+
+  <% end %>
+</div>

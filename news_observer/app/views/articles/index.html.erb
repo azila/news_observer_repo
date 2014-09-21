@@ -1,0 +1,34 @@
+<% @page_title = "Articles" %>
+
+<%= link_to("<< Back to Categories", {:controller => 'categories', :action => 'index', :newspaper_id => @category.newspaper_id}, :class => 'back-link') %>
+
+<div class="articles index">
+  <h2>Articles</h2>
+
+  <%= link_to("Add New Article", {:action => 'new', :category_id => @category.id}, :class => 'action new') %>
+
+  <table class="listing" summary="Article list">
+    <tr class="header">
+      <th>&nbsp;</th>
+      <th>Category</th>
+      <th>Article</th>
+      <th>Content Type</th>
+      <th>Visible</th>
+      <th>Actions</th>
+    </tr>
+    <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.position %></td>
+      <td><%= article.category.name if article.category %></td>
+      <td><%= article.name %></td>
+      <td><%= article.content_type %></td>
+      <td class="center"><%= status_tag(article.visible) %></td>
+      <td class="actions">
+        <%= link_to("Show", {:action => 'show', :id => article.id, :category_id => @category.id}, :class => 'action show') %>
+        <%= link_to("Edit", {:action => 'edit', :id => article.id, :category_id => @category.id}, :class => 'action edit') %>
+        <%= link_to("Delete", {:action => 'delete', :id => article.id, :category_id => @category.id}, :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
